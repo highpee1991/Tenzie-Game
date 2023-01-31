@@ -1,0 +1,372 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(2, 2, 19);
+}
+
+.die {
+  height: 50px;
+  width: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: white;
+}
+
+.is-die-held {
+  background-color: rgb(135, 255, 87);
+}
+
+.die-num {
+  font-size: 2rem;
+}
+
+.tenzies-container,
+.red-bg {
+  position: relative;
+  background: rgb(216, 216, 216);
+  padding: 2rem;
+  height: 85vh;
+  width: 90vw;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0.7rem;
+}
+
+.red-bg {
+  background: rgba(255, 182, 182, 0.74);
+}
+
+.dice-list {
+  max-width: 30rem;
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 11rem;
+  padding: 0.7rem 2rem;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  background: rgb(2, 2, 19);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:focus {
+  box-shadow: rgba(0, 5, 2, 0.35) 0px 5px 15px;
+}
+
+.btn:active {
+  border: none;
+}
+
+.tenzies-details {
+  position: absolute;
+  top: 3rem;
+  color: rgb(20, 2, 37);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 18rem;
+}
+
+.tenzies-header {
+  font-size: 3rem;
+  margin-bottom: -1rem;
+}
+
+.tenzies-about {
+  font-size: 1.2rem;
+}
+
+.dice {
+  color: tomato;
+}
+
+.number-of-rolls {
+  position: absolute;
+  bottom: -2.3rem;
+}
+
+.nums {
+  color: tomato;
+}
+
+.game-started {
+  background-color: rgb(167, 167, 167);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-start {
+  padding: 0.7rem 2rem;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  background: rgb(2, 2, 19);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: white;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.timer {
+  position: absolute;
+  right: 10rem;
+  bottom: 28rem;
+  color: rgb(0, 0, 0);
+  z-index: 999;
+}
+
+.blue,
+.red {
+  background-color: blue;
+  padding: 1rem;
+  border-radius: 0.7rem;
+}
+
+.red {
+  background-color: red;
+}
+
+.time-tic {
+  color: rgb(1, 13, 83);
+}
+
+.tic-color {
+  color: rgb(255, 0, 0);
+}
+
+.modal-wrapper {
+  position: absolute;
+  left: 22rem;
+  top: 6rem;
+  display: flex;
+
+  margin: 3rem;
+  z-index: 10000;
+}
+
+.modal {
+  position: relative;
+  width: 35rem;
+  height: 25rem;
+  padding: 2rem;
+  background-color: rgb(117, 0, 0);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  color: #fff;
+  border-radius: 0.7rem;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-size: 4rem;
+}
+
+.modal-body {
+  position: absolute;
+  bottom: 8rem;
+  font-size: 1.3rem;
+}
+
+.btns {
+  padding: 0.7rem 2rem;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  background: rgb(2, 2, 19);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btns:focus {
+  box-shadow: rgba(0, 5, 2, 0.35) 0px 5px 15px;
+}
+
+.btns:active {
+  border: none;
+}
+
+/* media screen */
+@media only screen and (max-width: 1200px) {
+  .modal-wrapper {
+    left: 17rem;
+  }
+
+  .modal {
+    width: 30rem;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal-body {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .modal-wrapper {
+    left: 14rem;
+  }
+
+  .modal {
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .modal-wrapper {
+    left: 13rem;
+  }
+
+  .modal {
+    width: 23rem;
+    height: 20rem;
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
+  }
+
+  .modal-body {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .modal-wrapper {
+    left: 9rem;
+  }
+
+  .modal {
+    width: 22rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .modal-wrapper {
+    left: 6rem;
+  }
+
+  .modal {
+    width: 21rem;
+  }
+
+  .timer {
+    right: 4rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .modal-wrapper {
+    left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .modal-wrapper {
+    left: 0.7rem;
+  }
+
+  .modal {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 573px) {
+  .modal {
+    width: 23rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .modal-wrapper {
+    left: 0.2rem;
+  }
+
+  .modal {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .modal-wrapper {
+    left: -1rem;
+  }
+
+  .modal {
+    width: 18rem;
+  }
+
+  .timer {
+    right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .modal-wrapper {
+    left: -1.4rem;
+  }
+
+  .modal {
+    width: 17.5rem;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    font-size: 0.8rem;
+  }
+
+  .blue,
+  .red {
+    padding: 0.3rem;
+  }
+
+  .timer {
+    font-size: 0.8rem;
+  }
+
+  .btns {
+    font-size: 0.8rem;
+  }
+}
