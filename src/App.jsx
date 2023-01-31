@@ -145,7 +145,7 @@ function App() {
         <h1 className="tenzies-header">Tenzies</h1>
         <p className="tenzies-about">
           Roll dice untill all dice are the same. Click each die to freeze it at
-          it's current value btween rolls.
+          it's current value between rolls.
         </p>
         <h2 className="number-of-rolls">
           Number Of Rolls: <span className="nums">{rollsCount}</span>{" "}
